@@ -304,7 +304,6 @@ class UploadUsers {
 
 				$user = get_entity($record['guid']);
 
-				set_user_validation_status($record['guid'], true, 'upload_users');
 
 				$hook_params = $record;
 				$hook_params['user'] = $user;

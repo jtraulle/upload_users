@@ -56,7 +56,7 @@ if (elgg_is_active_plugin('roles')) {
 
 $extra_mapping_options = array();
 foreach ($mapping_options as $md_name => $readable) {
-	$id = get_metastring_id($md_name);
+	$id = elgg_get_metastring_id($md_name);
 	if ($id) {
 		$not_in[] = $id;
 	}
@@ -73,7 +73,7 @@ if (count($not_in)) {
 
 $md_names = get_data($query);
 foreach ($md_names as $md_name) {
-	$string = get_metastring($md_name->name_id);
+	$string = elgg_get_metastring_id($md_name->name_id);
 	if ($string && !is_int($string)) {
 		$extra_mapping_options[$string] = $string;
 	}
